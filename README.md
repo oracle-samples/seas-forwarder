@@ -1,4 +1,4 @@
-Seas Forwarder
+# Seas Forwarder
 
 The SEAS Forwarder is a python script that installs as a SSH daemon subsystem,
 similar to how 'sftp-server' installs as an sftp subsystem.  The forwarder
@@ -117,11 +117,11 @@ serverTimeout - The amount of time the connection between the SEAS
                 disconnecting.
     - Default value:  300 seconds
 
-# Need Help?
+## Need Help?
 
 * Create a GitHub [issue](https://github.com/oracle-samples/seas-forwarder/issues).
 
-# Contributing
+## Contributing
 
 This project welcomes contributions from the community. Before submitting a pull request, please [review our contribution guide](./CONTRIBUTING.md).
 

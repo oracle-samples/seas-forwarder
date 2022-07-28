@@ -119,7 +119,7 @@ serverTimeout - The amount of time the connection between the SEAS
 
 # Need Help?
 
-* Create a GitHub [issue](https://github.com/oracle/seas-forwarder/issues).
+* Create a GitHub [issue](https://github.com/oracle-samples/seas-forwarder/issues).
 
 # Contributing
 
@@ -127,7 +127,7 @@ This project welcomes contributions from the community. Before submitting a pull
 
 ## Security
 
-The [Security Guide](./SECURITY.md) contains information about security vulnerability disclosure process. If you discover a vulnerability, consider filing an [issue](https://github.com/oracle/seas-forwarder/issues).
+The [Security Guide](./SECURITY.md) contains information about security vulnerability disclosure process. If you discover a vulnerability, consider filing an [issue](https://github.com/oracle-samples/seas-forwarder/issues).
 
 ## License
 

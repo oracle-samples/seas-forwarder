@@ -1,13 +1,5 @@
-### Copyright (C) 2022, Oracle and/or its affiliates.  All rights reserved. ###
-===============================================================================
+Seas Forwarder
 
-This project contains seas forwarder code which is used to connect EAGLE to CCSMR.
-
-This will run on CCSMR machine and requires SSH Deamon to run.
-
-
-Description
------------
 The SEAS Forwarder is a python script that installs as a SSH daemon subsystem,
 similar to how 'sftp-server' installs as an sftp subsystem.  The forwarder
 allows the EAGLE SEAS client to connect, via SSH, to the SEAS server running
@@ -21,7 +13,6 @@ the local SEAS server.
 After the connections are established, the SEAS Forwarder will act as a
 conduit for all IP traffic passed between the EAGLE SEAS client and the SEAS
 server.  The traffic that is passed through the SEAS Forwarder is unaltered.
-
 
 Requirements
 ------------
@@ -126,48 +117,32 @@ serverTimeout - The amount of time the connection between the SEAS
                 disconnecting.
     - Default value:  300 seconds
 
+# Need Help?
 
-LOGGING
--------
-There are three supported log levels:  INFO, DEBUG, and TRACE.  Log output for
-INFO and DEBUG are written to the syslog daemon(syslogd).  This allows
-multiple instances of the SEAS Forwarder to log simultaneously to one log file
-location.  On most systems, the output file for syslogd is in
-"/var/log/messages".
+* Create a GitHub [issue](https://github.com/oracle/seas-forwarder/issues).
 
-The TRACE log level is the most verbose.  It logs all data sent between the
-SEAS server and the EAGLE SEAS client.  This log output is not sent to syslogd
-to prevent the SEAS Forwarder from overrunning the syslogd log file.  Instead
-a new log file is created based on the setting of traceLogFileDir,
-traceLogFileName, traceLogFileSize, and traceBackupCount.
+# Contributing
 
-When TRACE is enabled, INFO and DEBUG log output is written to the trace log
-file and to syslogd.
+This project welcomes contributions from the community. Before submitting a pull request, please [review our contribution guide](./CONTRIBUTING.md).
 
-Based on the default values, up to 6 log files will be created at 2MB in size.
-This will take the form of:
-    - seas_forwarder.log.<process id>   (newest log)
-    - seas_forwarder.log.<process id>.1
-    - ....
-    - seas_forwarder.log.<process id>.5 (oldest log)
-The default settings will allow the trace log to consume no more than 12MB of
-disk space per instance of the SEAS Forwarder process.
+## Security
 
-When trace logging is enabled, each instance of the SEAS Forwarder process
-will have its own log file.  By default, as mentioned above, each instance
-will be limited to using 12MB of disk space.  It is up to the system
-administrator to delete these log files.  It is only recommended to enable
-trace logging when debugging issues with the SEAS Forwarded since this could
-produce several log files.
+The [Security Guide](./SECURITY.md) contains information about security vulnerability disclosure process. If you discover a vulnerability, consider filing an [issue](https://github.com/oracle/seas-forwarder/issues).
 
+## License
 
-Need Help?
+“Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved. 
+The Universal Permissive License (UPL), Version 1.0 
 
-    Create a GitHub issue.
+Subject to the condition set forth below, permission is hereby granted to any person obtaining a copy of this software, associated documentation and/or data (collectively the "Software"), free of charge and under any and all copyright rights in the Software, and any and all patent rights owned or freely licensable by each licensor #hereunder covering either (i) the unmodified Software as contributed to or provided by such licensor, or (ii) the Larger Works (as defined below), to deal in both
 
-Contributing
+(a) the Software, and 
+(b) any piece of software and/or hardware listed in the lrgrwrks.txt file if one is included with the Software (each a “Larger Work” to which the Software is contributed by such licensors),
 
-This project welcomes contributions from the community. Before submitting a pull request, please review our contribution guide.
-Security
+without restriction, including without limitation the rights to copy, create derivative works of, display, perform, and #distribute the Software and make, use, sell, offer for sale, import, export, have made, and have sold the Software and the Larger Work(s), and to sublicense the foregoing rights on either these or other terms.
 
-The Security Guide contains information about security vulnerability disclosure process. If you discover a vulnerability, consider filing an issue.
+This license is subject to the following condition:
+
+The above copyright notice and either this complete permission notice or at a minimum a reference to the UPL must be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

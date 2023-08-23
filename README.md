@@ -19,9 +19,8 @@ Requirements
 Python 2.5.6 and above (Python 3.x not supported)
 SSH Daemon
 
+## Installation
 
-Installation
-------------
 The SEAS Forwarder zip file will contain the following files:
     - seas_forwarder.py
     - seas_forwarder.cfg
